@@ -1,10 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-SistemaJoyeria-d377f7cd-fb9e-427a-901e-a0eb13304f31</UserSecretsId>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,12 +12,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.15" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SistemaJoyeria.AccesoDatos\SistemaJoyeria.AccesoDatos.csproj" />
-    <ProjectReference Include="..\SistemaJoyeria.Modelos\SistemaJoyeria.Modelos.csproj" />
     <ProjectReference Include="..\SistemaJoyeria.Utilidades\SistemaJoyeria.Utilidades.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SistemaJoyeria.Models;
+using SistemaJoyeria.Modelos.ViewModels;
 using System.Diagnostics;
 
 namespace SistemaJoyeria.Controllers

@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace SistemaJoyeria.Data
+namespace SistemaJoyeria.AccesoDatos.Data
+
 {
     public class ApplicationDbContext : IdentityDbContext
     {

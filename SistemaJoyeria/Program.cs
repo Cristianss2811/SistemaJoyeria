@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SistemaJoyeria.Data;
+using SistemaJoyeria.AccesoDatos.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,4 +1,4 @@
-namespace SistemaJoyeria.Models
+namespace SistemaJoyeria.Modelos.ViewModels
 {
     public class ErrorViewModel
     {
