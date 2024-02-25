@@ -2,8 +2,9 @@
 using SistemaJoyeria.Modelos.ViewModels;
 using System.Diagnostics;
 
-namespace SistemaJoyeria.Controllers
+namespace SistemaJoyeria.Areas.Inventario.Controllers
 {
+    [Area("Inventario")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
