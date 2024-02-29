@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaJoyeria.AccesoDatos.Data;
+using SistemaJoyeria.AccesoDatos.Repositorio.IRepositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SistemaJoyeria.AccesoDatos.Repositorio
 {
-    public  class Repositorio<T> where T : class
+    public  class Repositorio<T> : IRepositorio<T> where T : class
     {
         //Acceso a los datos es decir la conexion de la DB 
         private readonly ApplicationDbContext _db;
