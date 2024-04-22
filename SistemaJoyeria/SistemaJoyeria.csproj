@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-SistemaJoyeria-d377f7cd-fb9e-427a-901e-a0eb13304f31</UserSecretsId>
   </PropertyGroup>
@@ -22,6 +21,10 @@
     <ProjectReference Include="..\SistemaJoyeria.AccesoDatos\SistemaJoyeria.AccesoDatos.csproj" />
     <ProjectReference Include="..\SistemaJoyeria.Modelos\SistemaJoyeria.Modelos.csproj" />
     <ProjectReference Include="..\SistemaJoyeria.Utilidades\SistemaJoyeria.Utilidades.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Imagenes\Productos\" />
   </ItemGroup>
 
 </Project>
