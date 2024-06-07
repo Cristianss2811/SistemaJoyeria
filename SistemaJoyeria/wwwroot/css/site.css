@@ -1,22 +1,384 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form
+check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 10px;
+    font-family: "Lato", sans-serif;
+}
+
+.header {
+    height: 20vh;
+    background: linear-gradient(to right, #2b34bae3, #d1d4f1ea);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+.heading-primary {
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.50rem;
+}
+
+@media only screen and (max-width: 51.25rem) {
+    .heading-primary {
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+    }
+
+    .header {
+        height: 13vh;
+        background: linear-gradient(to right, #2b34bae3, #d1d4f1ea);
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    }
+}
+
+@media only screen and (max-width: 57rem) {
+    .heading-primary {
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+    }
+
+    .header {
+        height: 13vh;
+        background: linear-gradient(to right, #2b34bae3, #d1d4f1ea);
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    }
+}
+
+@media only screen and (max-width: 37.5rem) {
+    .heading-primary {
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+    }
+
+    .header {
+        height: 13vh;
+        background: linear-gradient(to right, #2b34bae3, #d1d4f1ea);
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    }
+}
+
+@media only screen and (max-width: 25.9rem) {
+    .heading-primary {
+        font-weight: 400;
+        font-size: 0.7rem;
+        padding-top: 0.5rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .header {
+        height: 10vh;
+        background: linear-gradient(to right, #2b34bae3, #d1d4f1ea);
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    }
+}
+
+@media only screen and (max-width: 23.5rem) {
+    .heading-primary {
+        font-weight: 400;
+        font-size: 0.7rem;
+        padding-top: 0.5rem;
+        letter-spacing: 0.1rem;
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('../Imagenes/pexels-ari-roberts-9637586.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Adds a dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    display: inline-block;
+}
+
+.content-text {
+    max-width: 600px;
+    padding-left: 3.5em;
+    padding-top: 4em;
+    
+}
+
+    .content-text h1 {
+        font-size: 2.5em;
+        font-weight: 200;
+        text-align:left;
+       
+    }
+
+        .content-text h1 span {
+            display: block;
+            font-size: 1.5em;
+            text-align: left;
+        }
+
+        .content-text p {
+            text-align: left;
+        }
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.letters{
+    display:flex;
+    align-items:flex-start;
+}
+
+.quote {
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-bg {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+    font-size: 1em;
+}
+
+.btn-shop {
+    background: #91a398;
+}
+
+    .btn-shop:hover {
+        background: #33605a;
+        color: white;
+    }
+
+/*div .card-footer .btn-bg {
+    background: #91a398;
+    margin: 5px;
+}*/
+
+.btn-shop:hover {
+    background: #33605a;
+    color: white;
+}
+
+.btn-new {
+    background: transparent;
+    border: 2px solid white;
+}
+
+    .btn-new:hover {
+        background: white;
+        color: #5A6268;
+    }
+}
+
+.ul-center{
+    align-items:center;
+}
+
+/* Botones del Nav */
+/*button {
+    font-size: 18px;
+    color: #e1e1e1;
+    font-family: roboto;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+
+    button:focus,
+    button:hover {
+        color: #fff;
+    }
+
+        button:focus:after,
+        button:hover:after {
+            width: 100%;
+            left: 0%;
+        }
+
+    button:after {
+        content: "";
+        pointer-events: none;
+        bottom: -2px;
+        left: 50%;
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: #fff;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: width, left;
+    }*/
+ a.button-like {
+    color: #e1e1e1;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+    text-decoration: none; /* Opcional: para quitar el subrayado de los enlaces */
+}
+
+    a.button-like:focus,
+    a.button-like:hover {
+        color: #fff;
+    }
+
+        a.button-like:focus:after,
+        a.button-like:hover:after {
+            width: 100%;
+            left: 0%;
+        }
+
+    a.button-like:after {
+        content: "";
+        pointer-events: none;
+        bottom: -2px;
+        left: 50%;
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: #fff;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: width, left;
+    }
+
+div.container-buscador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
+    padding: 10px; /* Ajusta según sea necesario */
+    
+}
+
+.container-buscador form {
+    flex-grow: 1;
+}
+
+.container-buscador input {
+    width: 100%;
+    padding: 10px; /* Ajusta según sea necesario */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/*footer CSS*/
+.footer {
+    background-color: #91a398; /* Brown color */
+    color: white;
+    padding: 0px 0;
+    text-align: center;
+}
+
+.footer-content {
+    line-height: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer .social-media p,
+.footer .mailing-list p {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer .social-media a,
+.footer .mailing-list form {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.footer .social-media i.custom-size {
+    font-size: 25px; /* Ajusta el tamaño según tus necesidades */
+    color: white;
+}
+
+.footer .logo p {
+    margin: 10px 0 0 0;
+    font-size: 12px;
+}
+
+.footer .mailing-list input[type="email"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.footer .mailing-list button {
+    padding: 9.5px 12px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background-color: #91a398; /* Green */ 
+    color: white;
+    cursor: pointer;
+}
+
+    .footer .mailing-list button:hover {
+        background-color:white; /* Darker green */
+        color: black;
+    }
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }

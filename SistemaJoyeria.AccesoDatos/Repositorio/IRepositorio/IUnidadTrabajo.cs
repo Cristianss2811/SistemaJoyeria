@@ -10,6 +10,14 @@ namespace SistemaJoyeria.AccesoDatos.Repositorio.IRepositorio
     {
         IBodegaRepositorio Bodega { get; }
 
+        ICategoriaRepositorio Categoria { get; }
+
+        ICharolaRepositorio Charola { get; }
+
+        IProductoRepositorio Producto { get; }
+
+        IUsuarioAplicacionRepositorio UsuarioAplicacion { get; }
+
         Task Guardar();
     }
 }

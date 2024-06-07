@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaJoyeria.AccesoDatos.Data;
 using SistemaJoyeria.AccesoDatos.Repositorio.IRepositorio;
+using SistemaJoyeria.Modelos.Especificaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,6 +98,33 @@ namespace SistemaJoyeria.AccesoDatos.Repositorio
         public void RemoverRango(IEnumerable<T> entidad)
         {
             dbSet.RemoveRange(entidad);
+        }
+
+        public PagesList<T> ObtenerTodosPaginado(Parametros parametros, Expression<Func<T, bool>> filtro = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string incluirPropiedades = null, bool isTracking = true)
+        {
+            IQueryable<T> query = dbSet;
+            if (filtro != null)
+            {
+                query = query.Where(filtro);
+            }
+            if (incluirPropiedades != null)
+            {
+                //"Categoria, Marca, ...."
+                foreach (var incluirProp in incluirPropiedades.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(incluirProp); //Marca, Categoria
+                }
+            }
+            if (orderBy != null)
+            {
+                query = orderBy(query);
+            }
+
+            if (!isTracking)
+            {
+                query = query.AsNoTracking();
+            }
+            return PagesList<T>.ToPagesList(query, parametros.PageNumber, parametros.PageSize);
         }
     }
 }

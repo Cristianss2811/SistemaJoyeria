@@ -1,8 +1,120 @@
-﻿@{
+﻿ @model SistemaJoyeria.Modelos.Especificaciones.PagesList<SistemaJoyeria.Modelos.Producto>
+@using SistemaJoyeria.Utilidades
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cadenita</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="overlay">
+            <div class="content-text">
+                <h1 class="roboto-thin">Every piece of <br><span>Jewelry tells a story</span></h1>
+                <p class="quote">"A gentleman knows his appearance is very important<br> that show his characteristic." - Unknown</p>
+                <div class="buttons">
+                    <a href="#" class="btn-bg btn-shop">Shop Now</a>
+                    <a href="#" class="btn-bg btn-new">New Items</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container my-2">
+            <div class="container-buscador">
+                <form asp-action="Index" method="get">
+                    <div class="col-lg-6 col-md-6 col-sm-6 d-flex">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control"
+                                   placeholder="Buscar..." aria-label="Buscar" aria-describedby="button-addon2" name="busqueda" value="@ViewData["BusquedaActual"]" />
+                            <button type="submit" class="btn btn-outline-primary">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        <!--Mostramos los productos-->
+        <div>
+            <div class="row">
+                @foreach (var producto in Model)
+                {
+                    <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+                        <div class="card w-100 my-2">
+                            <img src="@DS.ImagenRuta@producto.ImagenUrl" class="card-img-top" style="aspect-ratio:1/1" />
+                            <div class="card-body d-flex flex-column">
+                                <h5>@producto.Descripcion</h5>
+                                <p class="card-text">$@String.Format("{0:#,##0.000}", producto.Precio)</p>
+                                <div class="card-footer d-flex align-items-center pt-3 px-3 pb-0 mt-auto bg-white">
+                                        <a href="#" class="btn-bg btn-shop" style="margin:5px">
+                                    <i class="bi bi-tags-fill"></i>
+                                    Detalle
+                                    </a>
+                                        <a href="#" class="btn-bg btn-shop" style="margin:5px">
+                                            <i class="bi bi-bag-fill"></i>
+                                        Añadir
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+                <!---->
+                <!--Botones de navegación-->
+                <a asp-action="Index" asp-route-pageNumber="@(1)" asp-route-busquedaActual="@ViewData["BusquedaActual"]" class="btn btn-outline-primary">
+                    <i class="bi bi-skip-start-fill"></i>
+                </a>
+
+                <a asp-action="Index" asp-route-pageNumber="@((int)ViewData["PageNumber"]-1)" asp-route-busquedaActual="@ViewData["BusquedaActual"]" class="btn btn-outline-primary @ViewData["Previo"]">
+                    Anterior
+                </a>
+
+                <span>Página @ViewData["PageNumber"] de @ViewData["TotalPaginas"]</span>
+
+                <a asp-action="Index" asp-route-pageNumber="@((int)ViewData["PageNumber"]+1)" asp-route-busquedaActual="@ViewData["BusquedaActual"]" class="btn btn-outline-primary @ViewData["Siguiente"]">
+                    Siguiente
+                </a>
+
+                <a asp-action="Index" asp-route-pageNumber="@ViewData["TotalPaginas"]" asp-route-busquedaActual="@ViewData["BusquedaActual"]" class="btn btn-outline-primary">
+                    <i class="bi bi-skip-end-fill"></i>
+                </a>
+                <!---->
+        </div>
+    </section>
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <p>FOLLOW US</p>
+                <a href="#"><i class="bi bi-facebook custom-size"></i></a>
+                <a href="#"><i class="bi bi-pinterest custom-size"></i></a>
+                <a href="#"><i class="bi bi-instagram custom-size"></i></a>
+            </div>
+            <div class="logo">
+                <img src="~/Imagenes/LogoBlanco.png">
+                <p>&copy; 2019 La Cadenita. All Rights Reserved</p>
+            </div>
+            <div class="mailing-list">
+                <p>SUBSCRIBE TO OUR MAILING LIST</p>
+                <form>
+                    <input type="email" placeholder="Enter your email..." required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    <!---->
+</body>
+</html>
+
